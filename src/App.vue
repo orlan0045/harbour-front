@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <v-app>
+    <UploadFiles @update-events="updateEvents"/>
+    <CalendarVisualizer :events="events" :resources="resources"/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import UploadFiles from "@/components/UploadFiles";
+import CalendarVisualizer from "@/components/CalendarVisualizer";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      resources: [],
+      events: []
+    }
+  },
   components: {
-    HelloWorld
+    CalendarVisualizer,
+    UploadFiles
+  },
+  methods: {
+    updateEvents(resources, events) {
+      this.resources = resources
+      this.events = events
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+body, html, #app {
+  font-family: Roboto, sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: stretch;
 }
 </style>
