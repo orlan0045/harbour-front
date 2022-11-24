@@ -21,6 +21,14 @@ P.S. if you want to know which dates were parsed from pdf(-s), just open the con
 - Ability to check the original contract
 - Ability to filter dates on the Calendar by checking/unchecking contracts they belong to
 
+## Tech stack
+
+- Vue3
+- Vuetify3 (for making layout and some UI elements)
+- Axios (sending requests)
+- Bryntum calendar (paid 3rd party lib, which seemed to be very cool, so I decided to use trial version)
+- Mdi icons
+
 ## Installation
 
 It is better to use Dockerfile since everything is predefined there and any problems with running server should not be
